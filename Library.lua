@@ -9006,14 +9006,67 @@ function Library:CreateWindow(WindowInfo)
         )
 
         --// Footer \\-
-        FooterLabel = New("TextLabel", {
-            BackgroundTransparency = 1,
-            Size = UDim2.fromScale(1, 1),
-            Text = WindowInfo.Footer,
-            TextSize = 14,
-            TextTransparency = 0.5,
-            Parent = BottomBar,
-        })
+        local BottomBarLayout = New("UIListLayout", {
+    FillDirection = Enum.FillDirection.Horizontal,
+    HorizontalAlignment = Enum.HorizontalAlignment.Center,
+    VerticalAlignment = Enum.VerticalAlignment.Center,
+    Padding = UDim.new(0, 10),
+    Parent = BottomBar,
+})
+
+FooterLabel = New("TextLabel", {
+    BackgroundTransparency = 1,
+    Size = UDim2.fromScale(0.4, 1),
+    Text = WindowInfo.Footer,
+    TextSize = 14,
+    TextTransparency = 0.5,
+    TextXAlignment = Enum.TextXAlignment.Right,
+    Parent = BottomBar,
+})
+
+local FooterLinkLabel = New("TextButton", {
+    BackgroundTransparency = 1,
+    Size = UDim2.fromScale(0.3, 1),
+    Text = "",
+    AutoButtonColor = false,
+    Parent = BottomBar,
+})
+
+local FooterLinkIcon = New("ImageLabel", {
+    BackgroundTransparency = 1,
+    Image = "rbxassetid://7743867811",
+    ImageColor3 = Color3.fromRGB(0, 120, 255),
+    Size = UDim2.fromOffset(16, 16),
+    Position = UDim2.fromOffset(6, 2),
+    Parent = FooterLinkLabel,
+})
+
+local FooterLinkText = New("TextLabel", {
+    BackgroundTransparency = 1,
+    Position = UDim2.fromOffset(26, 0),
+    Size = UDim2.new(1, -30, 1, 0),
+    Text = "Footer Link",
+    TextColor3 = Color3.fromRGB(0, 120, 255),
+    TextSize = 14,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    Parent = FooterLinkLabel,
+})
+
+FooterLinkLabel.MouseButton1Click:Connect(function()
+    print("Footer Link clicked!")
+end)
+
+FooterLinkLabel.MouseEnter:Connect(function()
+    TweenService:Create(FooterLinkText, Library.TweenInfo, {
+        TextColor3 = Color3.fromRGB(0, 150, 255)
+    }):Play()
+end)
+
+FooterLinkLabel.MouseLeave:Connect(function()
+    TweenService:Create(FooterLinkText, Library.TweenInfo, {
+        TextColor3 = Color3.fromRGB(0, 120, 255)
+    }):Play()
+end)
 
         --// Resize Button \\--
         if WindowInfo.Resizable then
