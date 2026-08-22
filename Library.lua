@@ -36,7 +36,7 @@ local ExternalImageAssetCounter = 0
 local CustomImageManagerAssets = {
     TransparencyTexture = {
         RobloxId = 139785960036434,
-        Path ="Obsidian/assets/TransparencyTexture.png" ,
+        Path ="Kynx/assets/TransparencyTexture.png" ,
         URL = BaseURL .."assets/TransparencyTexture.png" ,
 
         Id = nil,
@@ -44,7 +44,7 @@ local CustomImageManagerAssets = {
 
     SaturationMap = {
         RobloxId = 4155801252,
-        Path ="Obsidian/assets/SaturationMap.png" ,
+        Path ="Kynx/assets/SaturationMap.png" ,
         URL = BaseURL .."assets/SaturationMap.png" ,
 
         Id = nil,
@@ -52,7 +52,7 @@ local CustomImageManagerAssets = {
 
     LoadingIcon = {
         RobloxId = 97544096941083,
-        Path ="Obsidian/assets/LoadingIcon.png" ,
+        Path ="Kynx/assets/LoadingIcon.png" ,
         URL = BaseURL .."assets/LoadingIcon.png" ,
 
         Id = nil,
@@ -60,7 +60,7 @@ local CustomImageManagerAssets = {
 
     CheckIcon = {
         RobloxId = 97682394690683,
-        Path ="Obsidian/assets/CheckIcon.png" ,
+        Path ="Kynx/assets/CheckIcon.png" ,
         URL = BaseURL .."assets/CheckIcon.png" ,
 
         Id = nil,
@@ -68,7 +68,7 @@ local CustomImageManagerAssets = {
 
     Glow = {
         RobloxId = 88645182616510,
-        Path ="Obsidian/assets/Glow.png" ,
+        Path ="Kynx/assets/Glow.png" ,
         URL = BaseURL .."assets/Glow.png" ,
 
         Id = nil,
@@ -110,7 +110,7 @@ do
 
         CustomImageManagerAssets[AssetName] = {
             RobloxId = RobloxAssetId,
-            Path = string.format("Obsidian/custom_assets/%s", AssetName),
+            Path = string.format("Kynx/custom_assets/%s", AssetName),
             URL = URL,
 
             Id = nil,
@@ -190,7 +190,7 @@ do
             Extension ="gif" 
         end
 
-        local Path = string.format("Obsidian/external_assets/image_%d.%s",
+        local Path = string.format("Kynx/external_assets/image_%d.%s",
             ExternalImageAssetCounter,
             Extension)
         RecursiveCreatePath(Path, true)
@@ -349,7 +349,7 @@ local Library = {
     IsLightTheme = false,
     Scheme = {
         BackgroundColor = Color3.fromRGB(15, 15, 15),
-        MainColor = Color3.fromRGB(30, 30, 30),
+        MainColor = Color3.fromRGB(25, 25, 25),
         AccentColor = Color3.fromRGB(255, 255, 255),
         OutlineColor = Color3.fromRGB(40, 40, 40),
         FontColor = Color3.new(1, 1, 1),
@@ -438,78 +438,77 @@ local Templates = {
     },
 
     Window = {
-    Title = "No Title",
-    BackgroundBlur = false,
-    TitleAnimation = false,
-    IconAnimation = false,
-    AddGroupboxAnimation = false,
-    Footer = "No Footer",
-    CopyableFooter = true,
+        Title ="No Title" ,
+        BackgroundBlur = false,
+        TitleAnimation = false,
+        IconAnimation = false,
+        AddGroupboxAnimation = false,
+        Footer ="No Footer" ,
+        CopyableFooter = true,
 
-    Position = UDim2.fromOffset(6, 6),
-    Size = UDim2.fromOffset(720, 600),
-    IconSize = UDim2.fromOffset(30, 30),
+        Position = UDim2.fromOffset(6, 6),
+        Size = UDim2.fromOffset(720, 600),
+        IconSize = UDim2.fromOffset(30, 30),
 
-    AutoShow = true,
-    Popups = {},
+        AutoShow = true,
+        Popups = {},
 
-    InitialTab = nil,
-    Center = true,
-    Resizable = true,
+        InitialTab = nil,
+        Center = true,
+        Resizable = true,
 
-    SearchbarSize = UDim2.fromScale(0.35, 1),
-    GlobalSearch = false,
-    FuzzySearch = true,
-    SearchValues = true,
-    SearchKeybind = Enum.KeyCode.F,
-    DisableSearchKeybind = false,
+        SearchbarSize = UDim2.fromScale(0.35, 1),
+        GlobalSearch = false,
+        FuzzySearch = true,
+        SearchValues = true,
+        SearchKeybind = Enum.KeyCode.F,
+        DisableSearchKeybind = false,
 
-    Minimizable = true,
-    MinimizeKeybind = nil,
-    MinimizedWidth = 300,
-    MinimizedSubtitle = "",
+        Minimizable = true,
+        MinimizeKeybind = nil,
+        MinimizedWidth = 300,
+        MinimizedSubtitle ="" ,
 
-    CornerRadius = 4,
-    NotifySide = "Right",
-    ShowCustomCursor = true,
+        CornerRadius = 4,
+        NotifySide ="Right" ,
+        ShowCustomCursor = true,
 
-    Font = Enum.Font.Code,
-    ToggleKeybind = Enum.KeyCode.RightControl,
+        Font = Enum.Font.Code,
+        ToggleKeybind = Enum.KeyCode.RightControl,
 
-    ShowMobileButtons = true,
-    MobileButtonsSide = "Left",
-    HideUiButtons = false,
+        ShowMobileButtons = true,
+        MobileButtonsSide ="Left" ,
 
-    UnlockMouseWhileOpen = true,
+        UnlockMouseWhileOpen = true,
 
-    EnableSidebarResize = false,
-    EnableCompacting = true,
-    DisableCompactingSnap = false,
-    SidebarCompacted = false,
-    MinContainerWidth = 256,
+        EnableSidebarResize = false,
+        EnableCompacting = true,
+        DisableCompactingSnap = false,
+        SidebarCompacted = false,
+        MinContainerWidth = 256,
 
-    MinSidebarWidth = 128,
-    SidebarCompactWidth = 48,
-    SidebarCollapseThreshold = 0.5,
+        MinSidebarWidth = 128,
+        SidebarCompactWidth = 48,
+        SidebarCollapseThreshold = 0.5,
 
-    CompactWidthActivation = 128,
+        CompactWidthActivation = 128,
 
-    BackgroundImage = "",
+        BackgroundImage ="" ,
 
-    Animations = {
-        ToggleWindow = false,
-        TabSwitch = false,
-        Groupbox = false,
-        Dropdown = false,
-        KeyPicker = false,
+        Animations = {
+            ToggleWindow = false,
+            TabSwitch = false,
+            Groupbox = false,
+            Dropdown = false,
+            KeyPicker = false,
 
-        SubTabUnderline = true
+            SubTabUnderline = true
+        },
+
+        TabTransitionTime = 0.22,
+        TabSwipeOffset = 26,
+        TabSwipeFrom ="bottom" 
     },
-
-    TabTransitionTime = 0.22,
-    TabSwipeOffset = 26,
-    TabSwipeFrom = "bottom"
-},
     Dialog = {
         Title ="Dialog" ,
         Description ="Description" ,
@@ -1655,7 +1654,7 @@ local function ParentUI(UI: instance, SkipHiddenUI: boolean?)
 end
 
 local ScreenGui = New("ScreenGui", {
-    Name ="Obsidian" ,
+    Name ="Kynx" ,
     DisplayOrder = 998,
     ResetOnSpawn = false,
 })
@@ -2269,7 +2268,7 @@ function Library:PlayTabAnimation(TabCanvas: CanvasGroup, Showing: boolean, OnCo
 end
 
 function Library:MakeOutline(Frame: GuiObject, Corner: number?, ZIndex: number?)
-    warn("Obsidian:MakeOutline is deprecated, please use Obsidian:AddOutline instead.")
+    warn("Kynx:MakeOutline is deprecated, please use Kynx:AddOutline instead.")
     local Holder = New("Frame", {
         BackgroundColor3 ="DarkColor" ,
         Position = UDim2.fromOffset(-2, -2),
@@ -10898,7 +10897,7 @@ function Library:CreateWindow(WindowInfo)
     if Library.BackgroundBlur then
         pcall(function()
             BlurEffectInstance = instance.new("BlurEffect")
-            BlurEffectInstance.Name ="ObsidianBackgroundBlur" 
+            BlurEffectInstance.Name ="KynxBackgroundBlur" 
             BlurEffectInstance.Size = 0
             BlurEffectInstance.Parent = game:GetService("Lighting")
         end)
@@ -16421,29 +16420,28 @@ function Library:CreateWindow(WindowInfo)
         end
     end)
 
-    local TrashButton = CreateSquareMobile Button("trash-2")
+    local TrashButton = CreateSquareMobileButton("trash-2")
     TrashButton:SetIconColor(Color3.fromRGB(220, 80, 80))
     TrashButton.Button.MouseButton1Click:Connect(function()
         Library:Unload()
     end)
 
-    if WindowInfo.MobileButtonsSide == "Right" then
-    ToggleButton.Button.Position = UDim2.new(1, -6, 0, 6)
-    ToggleButton.Button.AnchorPoint = Vector2.new(1, 0)
-    LockButton.Button.Position = UDim2.new(1, -6, 0, 46)
-    LockButton.Button.AnchorPoint = Vector2.new(1, 0)
-    TrashButton.Button.Position = UDim2.new(1, -6, 0, 86)
-    TrashButton.Button.AnchorPoint = Vector2.new(1, 0)
-else
-    LockButton.Button.Position = UDim2.fromOffset(6, 46)
-    TrashButton.Button.Position = UDim2.fromOffset(6, 86)
-end
-
-if WindowInfo.ShowMobileButtons == false or WindowInfo.HideUiButtons == true then
-    ToggleButton.Button.Visible = false
-    LockButton.Button.Visible = false
-    TrashButton.Button.Visible = false
-end
+    if WindowInfo.MobileButtonsSide =="Right" then
+        ToggleButton.Button.Position = UDim2.new(1, -6, 0, 6)
+        ToggleButton.Button.AnchorPoint = Vector2.new(1, 0)
+        LockButton.Button.Position = UDim2.new(1, -6, 0, 46)
+        LockButton.Button.AnchorPoint = Vector2.new(1, 0)
+        TrashButton.Button.Position = UDim2.new(1, -6, 0, 86)
+        TrashButton.Button.AnchorPoint = Vector2.new(1, 0)
+    else
+        LockButton.Button.Position = UDim2.fromOffset(6, 46)
+        TrashButton.Button.Position = UDim2.fromOffset(6, 86)
+    end
+    if WindowInfo.ShowMobileButtons == false then
+        ToggleButton.Button.Visible = false
+        LockButton.Button.Visible = false
+        TrashButton.Button.Visible = false
+    end
 
     Library:GiveSignal(SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
         Library:UpdateSearch(SearchBox.Text)
@@ -16501,7 +16499,7 @@ function Library:CreateLoading(LoadingInfo)
     }
 
     local ScreenGui = New("ScreenGui", {
-        Name ="ObsidianLoading" ,
+        Name ="KynxLoading" ,
         DisplayOrder = 999,
         ResetOnSpawn = false
     })
@@ -17178,7 +17176,7 @@ local function Library_LoadArqel()
     if ok and result then
         return result
     end
-    warn("[Obsidian] Failed to load Arqel UI:", tostring(result))
+    warn("[Kynx] Failed to load Arqel UI:", tostring(result))
     return nil
 end
 
@@ -17236,7 +17234,7 @@ function Library:CreateKeySystem(Info)
     Arqel:LaunchJunkie({ Service = Info.Service, Identifier = Info.Identifier, Provider = Info.Provider })
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Obsidian] Junkie key system closed without valid key") end
+    if not key then warn("[Kynx] Junkie key system closed without valid key") end
     return key
 end
 
@@ -17256,7 +17254,7 @@ function Library:CreateAegisKeySystem(Info)
         return loadstring(game:HttpGet("https://sdk.luaegis.net/sdk/library.lua"))()
     end)
     if not ok or not api then
-        warn("[Obsidian] Failed to load Lua Aegis SDK")
+        warn("[Kynx] Failed to load Lua Aegis SDK")
         if Info.FailCallback then Library:SafeCallback(Info.FailCallback,"SDK_LOAD_FAILED" ) end
         return nil
     end
@@ -17293,7 +17291,7 @@ function Library:CreateAegisKeySystem(Info)
     Arqel:Launch()
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Obsidian] Aegis key system closed without valid key") end
+    if not key then warn("[Kynx] Aegis key system closed without valid key") end
     return key
 end
 
@@ -17315,7 +17313,7 @@ function Library:CreateKeyForgeKeySystem(Info)
         return game:HttpGet("https://www.keyforge.win/sdk/client.lua", true)
     end)
     if not downloaded or typeof(sdkSource) ~="string" then
-        warn("[Obsidian] Could not download KeyForge SDK")
+        warn("[Kynx] Could not download KeyForge SDK")
         if Info.FailCallback then Library:SafeCallback(Info.FailCallback,"SDK_LOAD_FAILED" ) end
         return nil
     end
@@ -17360,7 +17358,7 @@ function Library:CreateKeyForgeKeySystem(Info)
             task.defer(function()
                 local loaded = client:loadScript()
                 if typeof(loaded) =="table" and not loaded.ok then
-                    warn("[Obsidian] KeyForge loadScript:", loaded.message)
+                    warn("[Kynx] KeyForge loadScript:", loaded.message)
                 end
             end)
         end
@@ -17378,7 +17376,7 @@ function Library:CreateKeyForgeKeySystem(Info)
     Arqel:Launch()
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Obsidian] KeyForge key system closed without valid key") end
+    if not key then warn("[Kynx] KeyForge key system closed without valid key") end
     return key
 end
 
@@ -17408,7 +17406,7 @@ function Library:CreateArqelKeySystem(Info)
     Arqel:Launch()
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Obsidian] Arqel key system closed without valid key") end
+    if not key then warn("[Kynx] Arqel key system closed without valid key") end
     return key
 end
 
@@ -17424,7 +17422,7 @@ function Library:Unload()
     end
 
     for _, Effect in ipairs(Lighting:GetChildren()) do
-        if Effect:IsA("BlurEffect") and Effect.Name =="ObsidianBackgroundBlur" then
+        if Effect:IsA("BlurEffect") and Effect.Name =="KynxrBackgroundBlur" then
             pcall(function()
                 Effect:Destroy()
             end)
