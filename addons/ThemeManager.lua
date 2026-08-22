@@ -32,7 +32,7 @@ local SchemeIndexes = {"FontColor" ,"MainColor" ,"AccentColor" ,"BackgroundColor
 local ThemeManager = {
     Library = nil,
 
-    Folder ="ObsidianLibSettings" ,
+    Folder ="KynxLibSettings" ,
 
     AppliedToTab = false,
     DefaultThemeName = nil,
@@ -870,5 +870,5 @@ function ThemeManager:ApplyToGroupbox(Groupbox: any)
     return ThemeManager:CreateThemeManager(Groupbox)
 end
 
-getgenv().ObsidianThemeManager = ThemeManager
+getgenv().KynxThemeManager = ThemeManager
 return ThemeManager
