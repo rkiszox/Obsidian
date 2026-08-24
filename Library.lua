@@ -110,7 +110,7 @@ do
 
         CustomImageManagerAssets[AssetName] = {
             RobloxId = RobloxAssetId,
-            Path = string.format("Kynx/custom_assets/%s", AssetName),
+            Path = string.format("Obsidian/custom_assets/%s", AssetName),
             URL = URL,
 
             Id = nil,
@@ -190,7 +190,7 @@ do
             Extension ="gif" 
         end
 
-        local Path = string.format("Kynx/external_assets/image_%d.%s",
+        local Path = string.format("Obsidian/external_assets/image_%d.%s",
             ExternalImageAssetCounter,
             Extension)
         RecursiveCreatePath(Path, true)
@@ -350,7 +350,7 @@ local Library = {
     Scheme = {
         BackgroundColor = Color3.fromRGB(15, 15, 15),
         MainColor = Color3.fromRGB(25, 25, 25),
-        AccentColor = Color3.fromRGB(255, 255, 255),
+        AccentColor = Color3.fromRGB(125, 85, 255),
         OutlineColor = Color3.fromRGB(40, 40, 40),
         FontColor = Color3.new(1, 1, 1),
         Font = Font.fromEnum(Enum.Font.Code),
@@ -1654,7 +1654,7 @@ local function ParentUI(UI: instance, SkipHiddenUI: boolean?)
 end
 
 local ScreenGui = New("ScreenGui", {
-    Name ="Kynx" ,
+    Name ="Obsidian" ,
     DisplayOrder = 998,
     ResetOnSpawn = false,
 })
@@ -2268,7 +2268,7 @@ function Library:PlayTabAnimation(TabCanvas: CanvasGroup, Showing: boolean, OnCo
 end
 
 function Library:MakeOutline(Frame: GuiObject, Corner: number?, ZIndex: number?)
-    warn("Kynx:MakeOutline is deprecated, please use Kynx:AddOutline instead.")
+    warn("Obsidian:MakeOutline is deprecated, please use Obsidian:AddOutline instead.")
     local Holder = New("Frame", {
         BackgroundColor3 ="DarkColor" ,
         Position = UDim2.fromOffset(-2, -2),
@@ -10897,7 +10897,7 @@ function Library:CreateWindow(WindowInfo)
     if Library.BackgroundBlur then
         pcall(function()
             BlurEffectInstance = instance.new("BlurEffect")
-            BlurEffectInstance.Name ="KynxBackgroundBlur" 
+            BlurEffectInstance.Name ="ObsidianBackgroundBlur" 
             BlurEffectInstance.Size = 0
             BlurEffectInstance.Parent = game:GetService("Lighting")
         end)
@@ -16499,7 +16499,7 @@ function Library:CreateLoading(LoadingInfo)
     }
 
     local ScreenGui = New("ScreenGui", {
-        Name ="KynxLoading" ,
+        Name ="ObsidianLoading" ,
         DisplayOrder = 999,
         ResetOnSpawn = false
     })
@@ -17176,7 +17176,7 @@ local function Library_LoadArqel()
     if ok and result then
         return result
     end
-    warn("[Kynx] Failed to load Arqel UI:", tostring(result))
+    warn("[Obsidian] Failed to load Arqel UI:", tostring(result))
     return nil
 end
 
@@ -17234,7 +17234,7 @@ function Library:CreateKeySystem(Info)
     Arqel:LaunchJunkie({ Service = Info.Service, Identifier = Info.Identifier, Provider = Info.Provider })
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Kynx] Junkie key system closed without valid key") end
+    if not key then warn("[Obsidian] Junkie key system closed without valid key") end
     return key
 end
 
@@ -17254,7 +17254,7 @@ function Library:CreateAegisKeySystem(Info)
         return loadstring(game:HttpGet("https://sdk.luaegis.net/sdk/library.lua"))()
     end)
     if not ok or not api then
-        warn("[Kynx] Failed to load Lua Aegis SDK")
+        warn("[Obsidian] Failed to load Lua Aegis SDK")
         if Info.FailCallback then Library:SafeCallback(Info.FailCallback,"SDK_LOAD_FAILED" ) end
         return nil
     end
@@ -17291,7 +17291,7 @@ function Library:CreateAegisKeySystem(Info)
     Arqel:Launch()
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Kynx] Aegis key system closed without valid key") end
+    if not key then warn("[Obsidian] Aegis key system closed without valid key") end
     return key
 end
 
@@ -17313,7 +17313,7 @@ function Library:CreateKeyForgeKeySystem(Info)
         return game:HttpGet("https://www.keyforge.win/sdk/client.lua", true)
     end)
     if not downloaded or typeof(sdkSource) ~="string" then
-        warn("[Kynx] Could not download KeyForge SDK")
+        warn("[Obsidian] Could not download KeyForge SDK")
         if Info.FailCallback then Library:SafeCallback(Info.FailCallback,"SDK_LOAD_FAILED" ) end
         return nil
     end
@@ -17358,7 +17358,7 @@ function Library:CreateKeyForgeKeySystem(Info)
             task.defer(function()
                 local loaded = client:loadScript()
                 if typeof(loaded) =="table" and not loaded.ok then
-                    warn("[Kynx] KeyForge loadScript:", loaded.message)
+                    warn("[Obsidian] KeyForge loadScript:", loaded.message)
                 end
             end)
         end
@@ -17376,7 +17376,7 @@ function Library:CreateKeyForgeKeySystem(Info)
     Arqel:Launch()
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Kynx] KeyForge key system closed without valid key") end
+    if not key then warn("[Obsidian] KeyForge key system closed without valid key") end
     return key
 end
 
@@ -17406,7 +17406,7 @@ function Library:CreateArqelKeySystem(Info)
     Arqel:Launch()
     while not getgenv().SCRIPT_KEY and not getgenv().ArqelClosed do task.wait(0.1) end
     local key = getgenv().SCRIPT_KEY
-    if not key then warn("[Kynx] Arqel key system closed without valid key") end
+    if not key then warn("[Obsidian] Arqel key system closed without valid key") end
     return key
 end
 
@@ -17422,7 +17422,7 @@ function Library:Unload()
     end
 
     for _, Effect in ipairs(Lighting:GetChildren()) do
-        if Effect:IsA("BlurEffect") and Effect.Name =="KynxBackgroundBlur" then
+        if Effect:IsA("BlurEffect") and Effect.Name =="ObsidianBackgroundBlur" then
             pcall(function()
                 Effect:Destroy()
             end)
